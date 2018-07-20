@@ -78,7 +78,7 @@ class PersonParser {
       containArr.push(splitData[i].split(','))
     }
 
-    for(let j = 1; j < containArr.length; j++) {
+    for(let j = 0; j < containArr.length; j++) {
       let id = containArr[j][0]
       let fName = containArr[j][1]
       let lName = containArr[j][2]
@@ -122,7 +122,9 @@ class PersonParser {
 let parser = new PersonParser('people.csv')
 parser.readFile(() => {
   parser.parsingData()
-  parser.addPerson('201', 'Fajar', 'Kerween', 'fajar@mail.com', '0822-1152-3242');
+  parser.addPerson('203', 'Oki', 'sapu', 'oki@mail.com', '0822-1152-3242');
+  parser.addPerson('204', 'andre', 'sapu', 'andre@mail.com', '0822-1152-3242');
+  parser.addPerson('205', 'oppo', 'op', 'oki@mail.com', '0822-1152-3242');
   console.log(parser.people); // parse data and create new Person sucess to array
   // console.log(`There are ${parser.people} people in the file '${parser.file}'.`)
 })
