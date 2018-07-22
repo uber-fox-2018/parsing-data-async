@@ -33,7 +33,7 @@ class PersonParser {
         let category = []
         let people_CSV = this.data.split('\n')
 
-        for (let i in people_CSV) {
+        for (let i = 0; i < people_CSV.length-1; i++) {
             let people_split = people_CSV[i].split(',')
 
             // let id = people_split[0]
@@ -73,6 +73,7 @@ class PersonParser {
 
 var personParser = new PersonParser('people.csv')
 personParser.readData(() => {
+    console.log(personParser.data)
     personParser.parsingData()
     personParser.addPerson('201', 'Tyler', 'Durden', 'durden@hotwheels.com', '1-111-666-666')
     personParser.addPerson('202', 'Lauren', 'Tsai', 'durden@hotwheels.com', '1-111-666-666')
